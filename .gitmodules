@@ -1,6 +1,3 @@
 [submodule "event_creation/neurorad"]
 	path = event_creation/neurorad
 	url = https://github.com/HerzLab/neurorad_pipeline.git
-[submodule "neurorad_pipeline"]
-	path = neurorad_pipeline
-	url = https://github.com/HerzLab/neurorad_pipeline.git

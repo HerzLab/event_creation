@@ -164,7 +164,8 @@ class WriteFinalLocalizationTask(PipelineTask):
                 localization.get_pair_coordinates(coord_space,pairs,type)
 
         logger.info("Writing localization.json file")
-        self.create_file(os.path.join(db_folder, 'localization.json',), localization.to_jsons(), 'localization', False)
+        localization_path = os.path.join(db_folder, 'localization.json')
+        self.create_file(localization_path, localization.to_jsons(), 'localization', False)
 
 class BrainBuilderWebhookTask(PipelineTask):
 

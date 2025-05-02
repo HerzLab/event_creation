@@ -183,7 +183,7 @@ class BaseLogParser(object):
         :param template:
         :return:
         """
-        dtypes = [(entry[0], entry[2], entry[3] if len(entry) > 3 else 1) for entry in template]
+        dtypes = [(entry[0], entry[2], entry[3]) if len(entry) > 3 else (entry[0], entry[2]) for entry in template]
         return dtypes
 
     @property

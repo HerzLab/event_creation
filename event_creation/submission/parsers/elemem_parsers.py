@@ -652,7 +652,7 @@ class ElememEFRCourierParser(BaseElememLogParser):
         self._burst_freq = [channel for channel in stim_channels if channel["stimtag"] == self._stimtag][0]["burst_slow_freq_Hz"]
  
         events[-1].trial = self._trial
-        events[-1].stim_params.burst_freq = self._burst_freq
+        events[-1].stim_params['burst_freq'] = self._burst_freq
         return events
 
 

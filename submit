@@ -1,9 +1,13 @@
 #!/bin/bash
-source /usr/global/Anaconda/2019-10/etc/profile.d/conda.sh
+#source /usr/global/Anaconda/2019-10/etc/profile.d/conda.sh
+#source /oceanus/collab/herz-lab/
+
+export FREESURFER_HOME='/oceanus/collab/herz-lab/processing_code/freesurfer'
+export PATH="/oceanus/collab/herz-lab/processing_code/R-3.2.0/bin:$PATH"
 
 USR=`logname`
 
-BACKUP=true;
+BACKUP=false;
 CHECK_USER=false;
 SCRIPT_ARGS=()
 

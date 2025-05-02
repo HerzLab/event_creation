@@ -72,7 +72,17 @@ def to_dict(arr):
 
     for key in recarray_keys:
         for entry in arr_as_dict:
-            if entry[key].size > 1:
+            # This used to be "if entry[key].size > 1:" but had to be changed
+            # I am not enitrely sure what the situation the else case was used
+            # It was probably needed before numpy changed how recarrays worked in version 2
+            # entry[key].size will alwas return 1 for this type of recarray now, so it doesn't work
+            # If for some reason this is throwing an error for you and you need the else statement,
+            #     then you should try replacing the if statement with 
+            #     "if entry[key].dtype.names != None and entry[key].dype.names.size > 1:"
+            #     or you can use
+            #     "if entry[key].dype.names != None:"
+            #     depending on what you need (the None happens if it is an ndarray
+            if True:
                 entry[key] = to_dict(entry[key])
             else:
                 entry[key] = dict(list(zip(entry[key].dtype.names, entry[key])))
